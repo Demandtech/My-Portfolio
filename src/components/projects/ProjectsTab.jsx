@@ -61,8 +61,8 @@ const ProjectsTab = () => {
   }, [languageParam])
 
   return (
-    <div className='overflow-x-scroll pb-5'>
-      <div className='flex lg:gap-2 justify-between md:justify-normal px-5 max-w-[200px] relative'>
+    <div className='overflow-x-scroll sticky top-0 py-2 bg-dark3 project-tab'>
+      <div className='flex gap-2 justify-between md:justify-normal px-2 w-[calc(100vw-55px)] lg:w-full relative'>
         {projectLang.map((language, index) => (
           <button
             onMouseEnter={handleMouseEnter}

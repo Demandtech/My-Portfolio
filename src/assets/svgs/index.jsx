@@ -9,7 +9,6 @@ export { default as PostgreSQLIcon } from './PostgreSQLIcon'
 export { default as PythonIcon } from './PythonIcon'
 export { default as JavaScriptIcon } from './JavaScriptIcon'
 export { default as TypeScriptIcon } from './TypescriptIcon'
-
 export { default as TailwindIcon } from './TailwindIcon'
 export { default as SassIcon } from './SassIcon'
 export { default as StyledComponentIcon } from './Styled-components'
@@ -24,4 +23,7 @@ export { default as ExperienceIcon } from './ExperienceIcon'
 export { default as EducationIcon } from './EducationIcon'
 export { default as AboutIcon } from './AboutIcon'
 export { default as HomeIcon } from './HomeIcon'
-export { default as ProjectIcon } from './ProjectIcon'
+export {default as ProjectIcon} from './ProjectIcon'
+
+
+export { default as CubeIcon } from './CubeIcon'

@@ -21,11 +21,12 @@ const Project = () => {
     >
       <div>
         <ProjectsTab />
-        <div className='px-5'>
+        <div className='px-2 grid grid-cols-1 lg:grid-cols-2 gap-2 pt-2'>
           {display_repos.map((repo, index) => (
             <ProjectCard {...repo} key={index} />
           ))}
         </div>
+        <div className='sticky bottom-0 bg-dark3 w-full h-8'></div>
       </div>
     </NormalLayout>
   )

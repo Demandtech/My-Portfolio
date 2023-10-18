@@ -31,29 +31,31 @@ function NormalLayout({ children, page, content, activePage }) {
       <Head page={page} content={content} />
 
       <div
-        className={`min-h-screen  ${path === '/' ? 'home-layout' : 'layout'}`}
+        className={`h-screen overflow-y-hidden  ${
+          path === '/' ? 'home-layout' : 'layout'
+        }`}
       >
-        <div className='bg-dark1 '>
+        <div className='bg-dark3 '>
           <Navbar setIsOpen={setIsSearchModalOpen} />
           <div className={`${path !== '/' ? 'inner-layout' : ''}`}>
             <div
               className={`${
                 path === '/'
                   ? 'hidden'
-                  : 'hidden lg:block bg-dark2 text-gray-light lg:h-[calc(100vh-78px)] overflow-y-scroll'
+                  : 'hidden lg:block bg-dark3 text-gray-light lg:h-[calc(100vh-78px)] overflow-y-scroll'
               }`}
             >
               <LeftAside />
             </div>
             <div
-              className={`h-[calc(100vh-70px)] lg:h-[calc(100vh-78px)] ${
-                page !== 'Welcome' ? 'bg-dark2' : ''
-              } overflow-y-auto relative lg:pb-5`}
+              className={`h-[calc(100vh-50px)] lg:h-[calc(100vh-70px)] ${
+                page !== 'Welcome' ? 'bg-dark3' : 'bg-dark2'
+              } overflow-y-auto relative`}
             >
-              <div className='bg-dark1 h-full'>
+              <div className='bg-dark3 h-full pb-5 z-10'>
                 <div
                   className={`${
-                    page !== 'Welcome' ? 'bg-dark2 p-2' : ''
+                    page !== 'Welcome' ? 'bg-dark3' : 'bg-dark1'
                   }  h-full`}
                 >
                   {children}
@@ -62,7 +64,7 @@ function NormalLayout({ children, page, content, activePage }) {
             </div>
           </div>
         </div>
-        <div className='w-[60px] flex items-center flex-col lg:w-full overflow-y-auto bg-dark2'>
+        <div className='flex items-center flex-col lg:w-full bg-dark3'>
           <RightAside />
           <SmallAside setIsOpen={setIsMenuOpen} />
         </div>

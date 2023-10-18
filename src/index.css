@@ -5,6 +5,7 @@
 .active {
   position: relative;
   background: #131313;
+  border-radius: 5px;
 }
 
 .active::before {
@@ -13,12 +14,12 @@
   height: 100%;
   position: absolute;
   left: 0;
-  transform: translateX(-10px);
-  background: linear-gradient(to right, red, #131313);
+  /* transform: translateX(-5px); */
+  background: linear-gradient(to right, #900d09, #131313);
 }
 
 .active svg {
-  fill: red;
+  fill: #900d09;
 }
 
 .layout,
@@ -50,8 +51,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -61,4 +62,13 @@
 ::-webkit-scrollbar-thumb {
   background-color: #303030;
   border-radius: 20px;
+}
+
+.smallbar::-webkit-scrollbar, .project-tab::-webkit-scrollbar{
+  display: none;
+}
+
+.smallbar, .project-tab{
+  -ms-overflow-style:none;
+  scrollbar-width: none
 }
