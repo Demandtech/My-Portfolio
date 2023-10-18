@@ -1,0 +1,8 @@
+export { default as About } from './About'
+export { default as Project } from './Project'
+export { default as Roadmap } from './Roadmap'
+export { default as Experience } from './Experience'
+export { default as Education } from './Education'
+export { default as Home } from './Home'
+export { default as Publication } from './Publication'
+export { default as Network } from './Network'
