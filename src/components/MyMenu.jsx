@@ -1,7 +1,9 @@
-import AboutInfo from './about/AboutInfo'
-import Languages from './about/Languages'
-import Framework from './about/Framework'
-import Contact from './about/Contact'
+import {
+  Framework,
+  AboutInfo,
+  Contact,
+  LanguageList
+} from '../components/aside'
 import PropTypes from 'prop-types'
 import Modal from '../components/reusable/Modal'
 import MenuLink from './MenuLink'
@@ -13,7 +15,7 @@ const MyMenu = ({ isOpen, setIsOpen }) => {
         <AboutInfo />
         <MenuLink />
         <Framework />
-        <Languages />
+        <LanguageList />
         <Contact />
       </div>
     </Modal>

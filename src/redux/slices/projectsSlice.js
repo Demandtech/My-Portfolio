@@ -1,58 +1,68 @@
 import { createSlice } from '@reduxjs/toolkit'
-import getAllRepos from '../thunks/projectThunk'
+import {
+  getAllProjects,
+  getLanguageProjects,
+  getSingleProject,
+} from '../thunks/projectThunk'
 
 const initialState = {
-  all_repos: [],
-  languages: [],
+  projects: [],
+  single_project: [],
   isLoading: false,
   error_message: '',
-  display_repos: [],
-  per_page: 10
+  per_page: 10,
 }
 
 const projectSlice = createSlice({
   name: 'projects',
   initialState,
 
-  reducers: {
-    getDisplayRepos: (state, { payload}) => {
-      
-      if (payload !== 'All') {
-        state.display_repos = state.all_repos.filter(
-          (repo) => repo.language === payload
-        )
-      } else {
-        state.display_repos = state.all_repos
-      }
-    },
-  },
-
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllRepos.pending, (state) => {
+
+      .addCase(getAllProjects.pending, (state) => {
         state.isLoading = true
+        state.error_message = ''
+        state.projects = []
       })
-      .addCase(getAllRepos.fulfilled, (state, { payload }) => {
+      .addCase(getAllProjects.fulfilled, (state, { payload }) => {
         state.isLoading = false
-        state.all_repos = payload
-        state.languages = [
-          'All',
-          ...new Set(
-            payload
-              .map((repo) => repo.language)
-              .filter(
-                (lang) =>
-                  lang !== 'HTML' &&
-                  lang !== null &&
-                  lang !== 'CSS' &&
-                  lang !== 'SCSS'
-              )
-          ),
-        ]
+        state.projects = payload
+        state.error_message = ''
       })
-      .addCase(getAllRepos.rejected, (state, { payload }) => {
+      .addCase(getAllProjects.rejected, (state, { payload }) => {
         state.isLoading = false
         state.error_message = payload
+      })
+
+      .addCase(getLanguageProjects.pending, (state) => {
+        state.isLoading = true
+        state.projects = []
+        state.error_message = ''
+      })
+      .addCase(getLanguageProjects.fulfilled, (state, { payload }) => {
+        state.isLoading = false
+        state.projects = payload
+        state.error_message = ''
+      })
+      .addCase(getLanguageProjects.rejected, (state, { payload }) => {
+        state.isLoading = false
+        state.error_message = payload
+        state.projects = []
+        state.error_message = payload
+      })
+      .addCase(getSingleProject.pending, (state) => {
+        state.isLoading = true
+        state.single_project = {}
+      })
+      .addCase(getSingleProject.fulfilled, (state, { payload }) => {
+        state.isLoading = false
+        state.single_project = payload
+      })
+      .addCase(getSingleProject.rejected, (state, { payload }) => {
+        state.error_message = payload
+        state.single_project = {}
       })
   },
 })

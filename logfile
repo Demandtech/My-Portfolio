@@ -1,0 +1,30 @@
+2023-10-20 22:13:06.393 WAT [936] LOG:  starting PostgreSQL 12.15 on x86_64-apple-darwin17.7.0, compiled by Apple LLVM version 10.0.0 (clang-1000.10.44.4), 64-bit
+2023-10-20 22:13:06.396 WAT [936] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-10-20 22:13:06.396 WAT [936] LOG:  listening on IPv6 address "::1", port 5432
+2023-10-20 22:13:06.397 WAT [936] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-10-20 22:13:06.456 WAT [937] LOG:  database system was shut down at 2023-10-20 19:34:17 WAT
+2023-10-20 22:13:06.473 WAT [936] LOG:  database system is ready to accept connections
+2023-10-20 22:39:32.869 WAT [1179] ERROR:  invalid input syntax for type json at character 47
+2023-10-20 22:39:32.869 WAT [1179] DETAIL:  Character with value 0x0a must be escaped.
+2023-10-20 22:39:32.869 WAT [1179] CONTEXT:  JSON data, line 1: ...terface, ensuring a seamless shopping experience.
+2023-10-20 22:39:32.869 WAT [1179] STATEMENT:  BEGIN;
+	UPDATE "public"."projects" SET "tools"='[["React", "I built the Ara Shop website using React, a popular and efficient JavaScript library. React allowed me to create a dynamic and responsive user interface, ensuring a seamless shopping experience.
+	
+	"], "Styled-Componets", "Redux Toolkit"]' WHERE "id"=2 RETURNING "id", "name", "description", "language", "tools", "live_link", "repo_link", "documentation";
+	
+2023-10-20 23:05:05.455 WAT [1179] ERROR:  invalid input syntax for type json at character 47
+2023-10-20 23:05:05.455 WAT [1179] DETAIL:  Token ""Styled-Components is used for styling, providing modular and maintainable styling directly within React components. Styled-Components simplifi" is invalid.
+2023-10-20 23:05:05.455 WAT [1179] CONTEXT:  JSON data, line 1: ...thin React components. Styled-Components simplifi
+2023-10-20 23:05:05.455 WAT [1179] STATEMENT:  BEGIN;
+	UPDATE "public"."projects" SET "tools"='[["React", "NorthStar is built using React, a powerful JavaScript library known for creating dynamic and responsive user interfaces, ensuring an exceptional shopping experience."], ["Styled-Components for Styling", "Styled-Components is used for styling, providing modular and maintainable styling directly within React components. Styled-Components simplifi' WHERE "id"=2 RETURNING "id", "name", "description", "language", "tools", "live_link", "repo_link", "documentation";
+	
+2023-10-21 04:21:36.615 WAT [936] LOG:  received smart shutdown request
+2023-10-21 04:21:36.620 WAT [936] LOG:  background worker "logical replication launcher" (PID 943) exited with exit code 1
+2023-10-21 04:21:36.620 WAT [938] LOG:  shutting down
+2023-10-21 04:21:36.634 WAT [936] LOG:  database system is shut down
+2023-10-21 21:08:33.939 WAT [769] LOG:  starting PostgreSQL 12.15 on x86_64-apple-darwin17.7.0, compiled by Apple LLVM version 10.0.0 (clang-1000.10.44.4), 64-bit
+2023-10-21 21:08:33.945 WAT [769] LOG:  listening on IPv6 address "::1", port 5432
+2023-10-21 21:08:33.945 WAT [769] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-10-21 21:08:33.947 WAT [769] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-10-21 21:08:34.268 WAT [774] LOG:  database system was shut down at 2023-10-21 18:28:21 WAT
+2023-10-21 21:08:34.353 WAT [769] LOG:  database system is ready to accept connections

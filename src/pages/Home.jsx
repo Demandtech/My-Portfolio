@@ -9,9 +9,9 @@ const Home = () => {
       page='Welcome'
       content={'Welcome to my portofio'}
     >
-      <div className='text-white text-center py-[40px] lg:pt-[120px] max-w-[650px] mx-auto px-5 bg-dark1'>
-        <h1 className='text-5xl lg:text-8xl font-bold leading-[48px] mb-10'>
-          {' < '} Doing <span className='text-[#900d09]'> Hard </span>
+      <div className='text-white text-center py-[40px] pt-20 md:pt-[120px] max-w-[650px] mx-auto px-5 bg-dark1'>
+        <h1 className='text-5xl lg:text-8xl font-black leading-[48px] mb-10'>
+          {' < '} Doing <span className='text-[#900d09] headerspan'> Hard </span>
           Things {'/>'}
         </h1>
         <p className='text-lg lg:text-2xl text-gray-light mb-10'>

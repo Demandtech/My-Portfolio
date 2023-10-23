@@ -1,8 +1,10 @@
-import Languages from '../components/about/Languages'
-import Framework from '../components/about/Framework'
-import AboutInfo from '../components/about/AboutInfo'
-import Contact from '../components/about/Contact'
-import Copyright from '../components/about/Copyright'
+import {
+  Framework,
+  AboutInfo,
+  Contact,
+  Copyright,
+  LanguageList,
+} from '../components/aside'
 
 const RightAside = () => {
   return (
@@ -11,7 +13,7 @@ const RightAside = () => {
       className='hidden lg:flex  px-2 bg-dark3 lg:h-screen flex-col gap-3 pt-3 overflow-y-scroll'
     >
       <AboutInfo />
-      <Languages />
+      <LanguageList />
       <Framework />
       <Contact />
       <Copyright />

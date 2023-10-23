@@ -1,9 +1,9 @@
-
-const CloseIcon = () => (
+import PropTypes from 'prop-types'
+const CloseIcon = ({ width = 24, height = 24, size = 24 }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='24'
-    height='24'
+    width={width || `${size}px`}
+    height={height || `${size}px`}
     viewBox='0 -960 960 960'
     fill='white'
   >
@@ -11,5 +11,10 @@ const CloseIcon = () => (
   </svg>
 )
 
+CloseIcon.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  size: PropTypes.number,
+}
 
 export default CloseIcon

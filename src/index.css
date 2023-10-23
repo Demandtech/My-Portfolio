@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6,
+.headerspan {
+  font-family: 'Raleway', sans-serif;
+}
+
+p,
+span {
+  font-family: 'Lato', sans-serif;
+}
+
 .active {
   position: relative;
   background: #131313;
@@ -15,11 +31,11 @@
   position: absolute;
   left: 0;
   /* transform: translateX(-5px); */
-  background: linear-gradient(to right, #900d09, #131313);
+  background: linear-gradient(to right, #ff0000, #131313);
 }
 
 .active svg {
-  fill: #900d09;
+  fill: #ff0000;
 }
 
 .layout,
@@ -64,11 +80,13 @@
   border-radius: 20px;
 }
 
-.smallbar::-webkit-scrollbar, .project-tab::-webkit-scrollbar{
+.smallbar::-webkit-scrollbar,
+.project-tab::-webkit-scrollbar {
   display: none;
 }
 
-.smallbar, .project-tab{
-  -ms-overflow-style:none;
-  scrollbar-width: none
+.smallbar,
+.project-tab {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

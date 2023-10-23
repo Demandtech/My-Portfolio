@@ -1,11 +1,9 @@
-import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { getDisplayRepos } from '../../redux/slices/projectsSlice'
 import { projectLang } from '../../utils/data'
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
-const ProjectsTab = () => {
-  const dispatch = useDispatch()
+const ProjectsTab = ({ setLanguage }) => {
   const location = useLocation()
   const navigate = useNavigate()
   const searchParams = new URLSearchParams(location.search)
@@ -13,9 +11,9 @@ const ProjectsTab = () => {
 
   const [position, setPosition] = useState(0)
   const [size, setSize] = useState(0)
-
   const [hoverPosition, setHoverPosition] = useState(0)
   const [hoverSize, setHoverSize] = useState(0)
+  const [width, setWidth] = useState(window.innerWidth)
 
   const handleActive = () => {
     const activeButtonElement = document.querySelector('.active-button')
@@ -35,7 +33,7 @@ const ProjectsTab = () => {
         : `${location.pathname}?language=${language}`
 
     navigate(newPath)
-    dispatch(getDisplayRepos(language))
+    setLanguage(language)
   }
 
   const handleMouseEnter = (event) => {
@@ -44,7 +42,6 @@ const ProjectsTab = () => {
     activeButtonElement.style.opacity = 0.5
     const buttonRect = event.target.getBoundingClientRect()
     const parentRect = event.target.parentElement.getBoundingClientRect()
-
     const left = buttonRect.left - parentRect.left
     setHoverPosition(left)
     setHoverSize(buttonRect.width)
@@ -56,20 +53,28 @@ const ProjectsTab = () => {
     activeButtonElement.style.opacity = 0
   }
 
+  const handleSize = () => {
+    setWidth(window.innerWidth)
+  }
+
   useEffect(() => {
     handleActive()
-  }, [languageParam])
+  }, [languageParam, width])
+
+  useEffect(() => {
+    window.addEventListener('resize', handleSize)
+
+    return () => window.removeEventListener('resize', handleSize)
+  }, [])
 
   return (
-    <div className='overflow-x-scroll sticky top-0 py-2 bg-dark3 project-tab'>
+    <div className='overflow-x-scroll sticky top-0 py-2 bg-dark3 project-tab z-50'>
       <div className='flex gap-2 justify-between md:justify-normal px-2 w-[calc(100vw-55px)] lg:w-full relative'>
         {projectLang.map((language, index) => (
           <button
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onClick={() => {
-              handleClick(language)
-            }}
+            onClick={() => handleClick(language)}
             className={`${
               (languageParam === language && language !== 'All') ||
               (languageParam === null && language === 'All')
@@ -88,7 +93,7 @@ const ProjectsTab = () => {
             height: `100%`,
             display: 'block',
             position: 'absolute',
-            transition: 'ease 500ms',
+            transition: 'ease 100ms',
           }}
           className={` bg-dark4  z-0 rounded-md`}
         ></div>
@@ -106,6 +111,10 @@ const ProjectsTab = () => {
       </div>
     </div>
   )
+}
+
+ProjectsTab.propTypes = {
+  setLanguage: PropTypes.func,
 }
 
 export default ProjectsTab

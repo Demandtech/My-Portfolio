@@ -2,12 +2,13 @@ import { createBrowserRouter } from 'react-router-dom'
 import {
   Home,
   About,
-  Project,
+  Projects,
   Roadmap,
   Education,
   Experience,
   Publication,
   Network,
+  SingleProject,
 } from './pages'
 
 const router = createBrowserRouter([
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/projects',
-    element: <Project />,
+    element: <Projects />,
   },
   {
     path: '/roadmap',
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: '/network',
     element: <Network />,
+  },
+  {
+    path: '/projects/:id',
+    element: <SingleProject />,
   },
 ])
 
