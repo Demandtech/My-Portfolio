@@ -7,7 +7,13 @@ const Education = () => {
       page='Education'
       content={'This is my Eduction Journey Page'}
     >
-      <div className='text-white'>Education</div>
+      <div className='px-4 relative'>
+        <div className='sticky top-0 bg-dark3 py-2 lg:py-4'>
+          <h2 className='text-white text-2xl lg:text-4xl font-black '>
+            Education
+          </h2>
+        </div>
+      </div>
     </NormalLayout>
   )
 }

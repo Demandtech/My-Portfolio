@@ -12,14 +12,22 @@ const LeftAside = () => {
   const { activePage } = useSelector((store) => store.features)
 
   const leftAsideStyle = (page) => {
-    return page === activePage
-      ? 'w-full py-2 px-3 flex items-center bg-dark4 gap-2 rounded-lg text-[#ffffff]'
-      : 'w-full py-2 px-3 flex items-center bg-dark4 gap-2 rounded-lg'
+    if (page) {
+      return page === activePage
+        ? 'w-full py-2 px-3 flex items-center bg-dark4 gap-2 rounded-lg text-[#ffffff]'
+        : 'w-full py-2 px-3 flex items-center bg-dark4 gap-2 rounded-lg'
+    } else {
+      return ['about', 'education', 'experience', 'roadmap'].includes(
+        activePage
+      )
+        ? 'w-full py-2 px-3 flex items-center bg-dark4 gap-2 rounded-lg text-[#ffffff]'
+        : 'w-full py-2 px-3 flex items-center bg-dark4 gap-2 rounded-lg'
+    }
   }
 
   const subNavStyle = (page) => {
     return page === activePage
-      ? 'text-gray-[#ffffff]  '
+      ? 'text-[#ffffff]  '
       : 'text-gray-dark hover:text-white'
   }
 
@@ -30,7 +38,7 @@ const LeftAside = () => {
   return (
     <div className='px-4 py-2 overflow-y-auto'>
       <div className='flex flex-col gap-5 h-full'>
-        <Link to={'/about'} className={twMerge(leftAsideStyle('about'))}>
+        <Link to={'/about'} className={twMerge(leftAsideStyle())}>
           <AboutIcon
             width={'20px'}
             height={'20px'}
@@ -42,21 +50,21 @@ const LeftAside = () => {
           <li
             className={`${twMerge(
               subNavStyle('about')
-            )} transition-colors duration-300 ease-in-out`}
+            )} transition-colors duration-200`}
           >
             <Link to={'/about'}>About Me</Link>
           </li>
           <li
             className={`${twMerge(
               subNavStyle('education')
-            )} transition-colors duration-300 ease-in-out`}
+            )} transition-colors duration-200`}
           >
             <Link to={'/education'}>Education</Link>
           </li>
           <li
             className={`${twMerge(
               subNavStyle('experience')
-            )} transition-colors duration-300 ease-in-out`}
+            )} transition-colors duration-200`}
           >
             <Link to={'/experience'}>Experience</Link>
           </li>

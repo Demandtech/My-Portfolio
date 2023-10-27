@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
 
 const SmallAside = ({ setIsOpen }) => {
   return (
-    <div className=' text-white h-screen bg-dark3 flex flex-col pt-5 lg:pt-8 lg:hidden gap-16'>
+    <div className=' text-white h-screen bg-dark3 flex flex-col pt-4 lg:pt-8 lg:hidden gap-16'>
       <div className='w-full mb-4 text-center'>
         <button onClick={() => setIsOpen(true)}>
           <MenuIcon className={'fill-gray-light '} />

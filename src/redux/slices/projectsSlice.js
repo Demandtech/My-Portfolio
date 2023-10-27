@@ -3,11 +3,13 @@ import {
   getAllProjects,
   getLanguageProjects,
   getSingleProject,
+  getSearchProjects,
 } from '../thunks/projectThunk'
 
 const initialState = {
   projects: [],
   single_project: [],
+  search_projects: [],
   isLoading: false,
   error_message: '',
   per_page: 10,
@@ -63,6 +65,21 @@ const projectSlice = createSlice({
       .addCase(getSingleProject.rejected, (state, { payload }) => {
         state.error_message = payload
         state.single_project = {}
+      })
+      .addCase(getSearchProjects.pending, (state) => {
+        state.search_projects = []
+        state.isLoading = true
+        state.error_message = ''
+      })
+      .addCase(getSearchProjects.fulfilled, (state, { payload }) => {
+        state.search_projects = payload
+        state.isLoading = false
+        state.error_message = ''
+      })
+      .addCase(getSearchProjects.rejected, (state, { payload }) => {
+        state.error_message = payload
+        state.isLoading = false
+        state.search_projects = []
       })
   },
 })

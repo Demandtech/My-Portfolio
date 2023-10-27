@@ -35,7 +35,7 @@ const Project = () => {
     <NormalLayout
       page='Projects'
       content='This is where you find all my public projects in one place'
-      activePage='project'
+      activePage='projects'
     >
       <div>
         <ProjectsTab setLanguage={setLanguage} />

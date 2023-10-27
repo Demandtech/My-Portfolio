@@ -68,3 +68,22 @@ export const getSingleProject = createAsyncThunk(
     }
   }
 )
+
+export const getSearchProjects = createAsyncThunk(
+  'projects/search',
+  async (query, thunkAPI) => {
+    try {
+      const { data, status } = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}?search=${query}`
+      )
+      console.log(data)
+      if (status === 200) {
+        return data
+      }
+      thunkAPI.rejectWithValue(data.message.detail)
+      return []
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error?.response?.data.detail)
+    }
+  }
+)

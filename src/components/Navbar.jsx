@@ -36,10 +36,10 @@ const Navbar = ({ setIsOpen }) => {
 
   return (
     <nav
-      className='p-4 lg:p-5 rounded-lg bg-dark1'
-      style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 1)' }}
+      className='p-2 lg:p-5'
+      // style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 1)' }}
     >
-      <div className='flex justify-between text-gray-light   items-center border border-dark2 p-1 rounded-lg'>
+      <div className='flex justify-between text-gray-light   items-center border border-dark2 p-1 rounded-lg lg:h-[50px]'>
         <div className='hidden lg:block'>
           <Clock />
         </div>

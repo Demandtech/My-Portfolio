@@ -28,3 +28,15 @@
 2023-10-21 21:08:33.947 WAT [769] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2023-10-21 21:08:34.268 WAT [774] LOG:  database system was shut down at 2023-10-21 18:28:21 WAT
 2023-10-21 21:08:34.353 WAT [769] LOG:  database system is ready to accept connections
+2023-10-27 23:41:11.952 WAT [803] LOG:  starting PostgreSQL 12.15 on x86_64-apple-darwin17.7.0, compiled by Apple LLVM version 10.0.0 (clang-1000.10.44.4), 64-bit
+2023-10-27 23:41:11.960 WAT [803] LOG:  listening on IPv6 address "::1", port 5432
+2023-10-27 23:41:11.960 WAT [803] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-10-27 23:41:11.962 WAT [803] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-10-27 23:41:12.228 WAT [804] LOG:  database system was shut down at 2023-10-27 23:28:18 WAT
+2023-10-27 23:41:12.387 WAT [803] LOG:  database system is ready to accept connections
+2023-10-27 23:42:28.898 WAT [803] LOG:  received fast shutdown request
+2023-10-27 23:42:28.899 WAT [803] LOG:  aborting any active transactions
+2023-10-27 23:42:28.900 WAT [1099] FATAL:  terminating connection due to administrator command
+2023-10-27 23:42:28.907 WAT [803] LOG:  background worker "logical replication launcher" (PID 810) exited with exit code 1
+2023-10-27 23:42:28.907 WAT [805] LOG:  shutting down
+2023-10-27 23:42:28.932 WAT [803] LOG:  database system is shut down
